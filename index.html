@@ -116,7 +116,7 @@
         margin: 0;
         padding: 0;
         background: #C41BFF url("./img/bg.png") left top no-repeat;
-        background-size: 100% 5.36rem;
+        background-size: 100%;
     }
 
     ul,
@@ -127,6 +127,7 @@
     }
     .container {
     	position: relative;
+    	margin-bottom: 2.13rem;
         overflow: hidden;
     }
 
@@ -143,8 +144,15 @@
 		height:5rem;
 		background:rgba(255,255,255,1);
 		border-radius:0.15rem;
+		margin-bottom: 0.21rem;
 	}
-	.step-container .title{
+	.step-container .body{
+		margin-top: 0.34rem;
+	}
+	.step-container .title,
+	.rule .title ,
+	.invite .title
+	{
 		height:0.85rem;
 		line-height:0.85rem;
 		text-align: center;	
@@ -152,13 +160,12 @@
 		font-weight:normal;
 		color:rgba(84,1,255,1);
 	}
-	.item{
-		margin-top: 0.34rem;
+	.step-container .item{
 		padding-left: 0.38rem;
 		margin-bottom: 0.34rem;	
 		overflow: hidden;
 	}
-	.item .no{
+	.step-container .item .no{
 		width:0.34rem;
 		height:0.58rem;
 		background:rgba(136,12,255,1);
@@ -168,11 +175,10 @@
 		font-size:0.29rem;
 		color:rgba(255,255,255,1);
 	}
-	.no.type{
+	.step-container .no.type{
 		background:rgba(104,6,255,1);
 	}
 	.item .content, .item .no {
-
 		float: left;
 	}	
 	.item .content{
@@ -186,24 +192,139 @@
 		font-size:0.28rem;
 	}	
 	.item .content div{
-		width: 6.17rem;
 		line-height:1;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
 	}	
 	.item .content div:nth-of-type(2){
 		margin-top: 0.04rem;
 		font-size:0.25rem;
 		color:rgba(102,102,102,1);
 	}
+	.rule{
+		width:7.08rem;
+		height:3.4rem;
+		background:rgba(255,255,255,1);
+		border-radius:0.15rem;
+		margin-bottom: 0.21rem;
+	}
+	.rule ul{
+		/*margin-top: 0.34rem;*/
+		padding-left: 0.6rem;
+	}	
+	.rule ul li{
+		font-size:0.25rem;
+		font-weight:400;
+		color:rgba(0,0,0,1);
+		line-height:0.32rem;
+		margin-bottom: 0.19rem;
+	}
+
+	.float-btn{
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 1.01rem;
+		background: #FFDE00 url("./img/btn.png") center no-repeat;
+		-webkit-background-size: cover;
+		background-size: cover;
+	}
+
+	.invite{
+		width:7.08rem;
+		height:3.75rem;
+		background:rgba(255,255,255,1);
+		border-radius:0.15rem;
+	}
+	.invite-step{
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: center;
+	}
+	.invite-step .step-one,
+	.invite-step .step-two {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.invite-step img{
+		width: 1.61rem;
+		height: 1.25rem;
+	}
+
+	.step-label{
+		margin: 0.15rem 0;
+		font-size:0.22rem;
+		color:rgba(0,0,0,1);
+		line-height:0.24rem;
+	}
+	.step-desc{
+		text-align: center;
+		font-size:0.22rem;
+		color:rgba(102,102,102,1);
+		line-height:0.32rem;
+	}
+	.dot{
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		width:0.10rem;
+		height:0.10rem;
+		background:rgba(140,14,255,1);
+		border-radius:50%;
+	}	
+	.dot::before{
+		content: "";
+		position: absolute;
+		top: 50%;
+		width:0.06rem;
+		height:0.06rem;
+		-webkit-transform: translateY(-50%);
+		transform: translateY(-50%);
+		background:rgba(140,14,255,1);
+		border-radius:50%;
+	}	
+	.dot::after{
+		content: "";
+		position: absolute;
+		top: 50%;
+		width:0.03rem;
+		height:0.03rem;
+		-webkit-transform: translateY(-50%);
+		transform: translateY(-50%);
+		background:rgba(140,14,255,1);
+		border-radius:50%;
+	}
+	.dot.dot-l::before{
+		left: -0.11rem;
+	}		
+	.dot.dot-l::after{
+		left: -0.27rem;
+	}	
+	.dot.dot-r::before{
+		right: -0.11rem;
+	}	
+	.dot.dot-r::after{
+		right: -0.27rem;
+	}
 </style>
 
 <body>
     <div class="container">
         <div class="step-container">
-        	<div class="title">如何拿到11元</div>
-        	<div class="content">
+        	<div class="title">
+        		<div class="dot dot-l"></div>
+        		<span>如何拿到11元</span>
+        		<div class="dot dot-r"></div>
+        	</div>
+        	<div class="body">
         		<div class="item">
         			<div class="no">1</div>
         			<div class="content">
@@ -235,9 +356,49 @@
         		
         	</div>
         </div>
+        <div class="rule">
+        	<div class="title">
+        		<div class="dot dot-l"></div>
+        		<span>规则说明</span>
+        		<div class="dot dot-r"></div>
+        	</div>
+        	<ul>
+        		<li>1.邀请的好友需为之前未使用过全民头条APP的用户和手机，才可以获得邀请得11元奖励。</li>
+        		<li>2.徒弟日收益大于500金币，视为有效活跃。</li>
+        		<li>3.邀请奖励均以奖金形式发放，当日兑换成现金。</li>
+        		<li>4.被发现作弊的用户，平台将取消奖励。</li>
+        	</ul>
+        </div>
+        <div class="invite">
+        	<div class="title">
+        		<div class="dot dot-l"></div>
+        		<span>邀请方式</span>
+        		<div class="dot dot-r"></div>
+        	</div>
+        	<div class="invite-step">
+        		<div class="step-one">
+        			<img src="../img/step1.png">
+    				<span class="step-label">第一步</span>
+        			<div class="step-desc">
+        				<div>选择模板通过微信或者</div>
+        				<div>QQ分享给好友</div>
+        			</div>
+        		</div>
+        		<div class="step-two">
+        			<img src="../img/step2.png">
+    				<span class="step-label">第二步</span>
+        			<div class="step-desc">
+        				<div>好友识别图片二维码下载</div>
+        				<div>或下载后填写你的邀请码</div>
+        				<div>完成绑定</div>
+        			</div>
+        		</div>
+        	</div>
+        </div>
     </div>
 
-    
+	<div class="float-btn"></div>
+
     <script>
 
     </script>
